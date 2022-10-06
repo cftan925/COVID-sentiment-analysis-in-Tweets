@@ -10,7 +10,7 @@ To build our corpus, we will use the Twitter API to collect tweets from various 
 
 We have not started building the corpus yet due to the fact that we managed to secure Academic Research Access only a couple of days ago. With the elevated access we managed to built two small test sets(masks and vaccines, you can find them in milestone 2 folder - test_masks.tsv and test_vaccines.tsv). We performed a manual annotation on both of them, each file was annotated by two students and only the tweets with the annotation agreement are included in the final test files. Since we performed a small EDA on our training data(data_analysis.ipynb in milestone 2 folder), we also looked into how our test files look like, as it turned out our vaccines test file was extremely unbalanced towards neutral tweets(85%/10%/5% neu/neg/pos correspondingly) and our masks test set was really unbalanced towards negative tweets(approximately similar numbers), we manually added positive and negative tweets there as well to understand how good/bad our models are going to deal with them. Under no condition we are planning to do the same thing with our tweets corpus data.<br>
 When it comes to the main corpus, one of our tasks was the next week is to work on the API queries and collect all the tweets which we are going to use in order to do our sentiment analysis. The number of tweets is going to defined by the availability of the data. When it comes to the queries, we will base them on the key words as well as on the tags, we will have to develop such queries that our data is devoid of ads, reposts, super short and meaningless tweets and gibberish. As an idea, it would be interested to focus our research on private tweets and discussions, rather than news or announcements.<br>
-It is important to mention as well that we also gathered an annotated training data(https://alt.qcri.org/semeval2017/task4/?id=download-the-full-training-data-for-semeval-2017-task-4) with positive/negative/neutral labels and our training set is comprised of around 15000 examples. Let us discuss the engineering side of things and what we did with the training set.
+It is important to mention as well that we also gathered an [annotated training data](https://alt.qcri.org/semeval2017/task4/?id=download-the-full-training-data-for-semeval-2017-task-4) with positive/negative/neutral labels and our training set is comprised of around 15000 examples. Let us discuss the engineering side of things and what we did with the training set.
 
 
 ### *Engineering:*
@@ -21,7 +21,8 @@ As mentioned in milestone 1, our research and development is going to be centere
 Discussion:
 
 1) CNN 
-As suggested in plenty of articles, CNN is one of the optimal options for sentiment analysis. Therefore, we tried to looked deeper into this model. Our baseline for vanilla CNN is 0.48 accuracy and 0.39 f-1 score. In order to improve the scores, we performed a random hyperparameter search, we were looking into the different kernel sizes, embedding dimension, dropout % and learning rate. On 30 iterations, which took us almost 14 hours, we managed to find the hyperparameters that enables us to boost the scores to 0.55 accuracy and 0.52 f-1, which was a promising result. On following the suggestion in the article(https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9336549), we also gave a try to:
+As suggested in plenty of 
+s, CNN is one of the optimal options for sentiment analysis. Therefore, we tried to looked deeper into this model. Our baseline for vanilla CNN is 0.48 accuracy and 0.39 f-1 score. In order to improve the scores, we performed a random hyperparameter search, we were looking into the different kernel sizes, embedding dimension, dropout % and learning rate. On 30 iterations, which took us almost 14 hours, we managed to find the hyperparameters that enables us to boost the scores to 0.55 accuracy and 0.52 f-1, which was a promising result. On following the suggestion in the [article](https://ieeexplore.ieee.org/stamp/stamp.jsp?tp=&arnumber=9336549), we also gave a try to:
 
 BiLSTM                     (0.54 acc, 0.52 f-1)
 CNN + BiLSTM               (0.51 acc, 0.51 f-1)
@@ -63,12 +64,12 @@ A good article is [Contextualized Embedding based Approaches for Social Media-sp
 
 The model:
 
-![Model](sakhr3-p8-sakhr-large.gif)    
+![Model](Pics/sakhr3-p8-sakhr-large.gif)    
 
 4. [Classifying Tweet Sentiment Using the Hidden State and Attention Matrix of a Fine-tuned BERTweet Model](https://arxiv.org/abs/2109.14692). 
-- In this paper, the author compared the performance of various embedding and classification model combinations on classifying sentiment of tweets. The pipeline of tackling the task in shown below.  ![General pipeline](pipeline.png?raw=true "General pipeline")
+- In this paper, the author compared the performance of various embedding and classification model combinations on classifying sentiment of tweets. The pipeline of tackling the task in shown below.  ![General pipeline](Pics/pipeline.png?raw=true "General pipeline")
 - The result shows that using a fine-tuned Bertweet model to produce tweet embeddings along with a Multi-layer Perceptron Classifier yeilds better result than other embedding+classification combinations. 
-![Result](result.png?raw=true "Result table")
+![Result](Pics/result.png?raw=true "Result table")
 - The detailed of the best model structure they proposed is: 
 	- a.  use Bertweet tokenizer to pre-process the tweets.
 	- b. fine-tune the parameters of Bertweet model with sentiment specific data.
