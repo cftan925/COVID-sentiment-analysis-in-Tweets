@@ -64,12 +64,12 @@ A good article is [Contextualized Embedding based Approaches for Social Media-sp
 
 The model:
 
-![Model](Pics/sakhr3-p8-sakhr-large.gif)    
+![Model](Pics/Project-proposal/sakhr3-p8-sakhr-large.gif)    
 
 4. [Classifying Tweet Sentiment Using the Hidden State and Attention Matrix of a Fine-tuned BERTweet Model](https://arxiv.org/abs/2109.14692). 
-- In this paper, the author compared the performance of various embedding and classification model combinations on classifying sentiment of tweets. The pipeline of tackling the task in shown below.  ![General pipeline](Pics/pipeline.png?raw=true "General pipeline")
+- In this paper, the author compared the performance of various embedding and classification model combinations on classifying sentiment of tweets. The pipeline of tackling the task in shown below.  ![General pipeline](Pics/Project-proposal/pipeline.png?raw=true "General pipeline")
 - The result shows that using a fine-tuned Bertweet model to produce tweet embeddings along with a Multi-layer Perceptron Classifier yeilds better result than other embedding+classification combinations. 
-![Result](Pics/result.png?raw=true "Result table")
+![Result](Pics/Project-proposal/result.png?raw=true "Result table")
 - The detailed of the best model structure they proposed is: 
 	- a.  use Bertweet tokenizer to pre-process the tweets.
 	- b. fine-tune the parameters of Bertweet model with sentiment specific data.
