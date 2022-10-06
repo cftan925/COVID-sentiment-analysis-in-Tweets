@@ -13,6 +13,14 @@
   - [Data Analysis Code](https://github.ubc.ca/maryisme/covid_sentiment/blob/master/milestone_2/data_analysis.ipynb)
   - [CNN Model](https://github.ubc.ca/maryisme/covid_sentiment/tree/master/milestone_2/CNN)
   - [Bertweet Model](https://github.ubc.ca/maryisme/covid_sentiment/tree/master/milestone_2/Bertweet)
+
+  ## Milestone 2
+  - [Project Proposal](https://github.com/StarrySkyrs/COVID-sentiment-analysis-in-Twitter/blob/main/milestone_2/Project_proposal.md)
+  - [CNN](https://github.com/StarrySkyrs/COVID-sentiment-analysis-in-Twitter/tree/main/milestone_2/CNN) folder with the code used to train CNN models(CNN and CNN Deep) with the scores on the training, validation and test sets
+  - [Bertweet](https://github.com/StarrySkyrs/COVID-sentiment-analysis-in-Twitter/tree/main/milestone_2/Bertweet) folder with the code used to train Bertweet + linear layer, with the scores on training and validation sets
+  - [Test data](https://github.com/StarrySkyrs/COVID-sentiment-analysis-in-Twitter/tree/main/milestone_2/Test%20data): test_masks.tsv, test_vaccines.tsv
+  - EDA on the training, validation and test sets
+
   
 ## Milestone 3
   - [Bertweet Model](https://github.ubc.ca/maryisme/covid_sentiment/tree/master/milestone_3/Bertweet)
