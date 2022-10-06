@@ -19,14 +19,14 @@ This report is going to describe only the ideas/models that worked for this proj
 ## Related works
 
 
-Sentiment analysis has been a central topic of dozens of projects and all of them approach the task from different angles. One of the extensive studies relevant to our project is Sentiment Analysis In Tweets(https://arxiv.org/pdf/2105.14373.pdf). Published in 2021, it discusses state-of-the-art Transformer-based autoencoder models with regards to the sentiment classification of tweets and their fine-tuning. The project suggests that one of the most appropriate language models to be used in the sentiment classification of tweets is BERTweet. In particular, the authors highlight that the model achieved the best overall results when it is combined with LR and MLP classifiers. In comparison to the other state-of-the-art models, BERTweet appears to be as demanding in terms of the training data. The paper also discusses the fine-tuning of BERTweet which we are going to take advantage of later in our project.<br>
+Sentiment analysis has been a central topic of dozens of projects and all of them approach the task from different angles. One of the extensive studies relevant to our project is [Sentiment Analysis In Tweets](https://arxiv.org/pdf/2105.14373.pdf). Published in 2021, it discusses state-of-the-art Transformer-based autoencoder models with regards to the sentiment classification of tweets and their fine-tuning. The project suggests that one of the most appropriate language models to be used in the sentiment classification of tweets is BERTweet. In particular, the authors highlight that the model achieved the best overall results when it is combined with LR and MLP classifiers. In comparison to the other state-of-the-art models, BERTweet appears to be as demanding in terms of the training data. The paper also discusses the fine-tuning of BERTweet which we are going to take advantage of later in our project.<br>
 
-Another deep work which drew our attention is Topic Detection And Sentiment Analysis In Twitter Content Related To COVID-19 From Brazil And The USA(https://www.sciencedirect.com/science/article/pii/S1568494620309959). Unlike our project the main goal if which is to reveal how the sentiment on various topics was changing over 15 months, the authors look into how the sentiment was changing over an earlier period of time. They also appear to cover a much larger number of topics, like economic impacts, case reports/statistics, proliferation care, politics, entertainment, treatments, online events, charity, sports and anti-racism protests. Another peculiarity of the study is connected with the fact that it centers around only the USA and Brazil countries and encompasses two languages-English and Portugese. The result of the study unfolds what topics include mainly positive or negative tweets as well what was the trend for their change over the studied period of time. A very valuable part of the study is allocated to the sentiment analysis and topic modeling, which is going to give us some guidance in our own project.<br>
+Another deep work which drew our attention is [Topic Detection And Sentiment Analysis In Twitter Content Related To COVID-19 From Brazil And The USA](https://www.sciencedirect.com/science/article/pii/S1568494620309959). Unlike our project the main goal if which is to reveal how the sentiment on various topics was changing over 15 months, the authors look into how the sentiment was changing over an earlier period of time. They also appear to cover a much larger number of topics, like economic impacts, case reports/statistics, proliferation care, politics, entertainment, treatments, online events, charity, sports and anti-racism protests. Another peculiarity of the study is connected with the fact that it centers around only the USA and Brazil countries and encompasses two languages-English and Portugese. The result of the study unfolds what topics include mainly positive or negative tweets as well what was the trend for their change over the studied period of time. A very valuable part of the study is allocated to the sentiment analysis and topic modeling, which is going to give us some guidance in our own project.<br>
 
-One of the most relevant and central works for this project is, however, SemEval-2017 Task 4: Sentiment Analysis in Twitter(https://aclanthology.org/S17-2088.pdf). The article describes several sentiment classification subtasks with one of them being of particular interest to us, namely subtask A with a three-class classification. The paper provides the information on the results of various teams on the tasks which we are going to use to evaluate our own models performance. The article was a source of the participating teams results that we took advantage of in order to build a more robust model.<br>
+One of the most relevant and central works for this project is, however, [SemEval-2017 Task 4: Sentiment Analysis in Twitter](https://aclanthology.org/S17-2088.pdf). The article describes several sentiment classification subtasks with one of them being of particular interest to us, namely subtask A with a three-class classification. The paper provides the information on the results of various teams on the tasks which we are going to use to evaluate our own models performance. The article was a source of the participating teams results that we took advantage of in order to build a more robust model.<br>
 
-One of the best results were demonstrated in DataStories at SemEval-2017 Task 4: Deep LSTM with Attention for
-Message-level and Topic-based Sentiment Analysis paper(https://aclanthology.org/S17-2126.pdf). The architecture described involves a 2-layer Bidirectional LSTM, equipped with an attention mechanism, as well as the pre-trained word embeddings intended to initialize the first layer. Another promising work BB twtr at SemEval-2017 Task 4: Twitter Sentiment Analysis with CNNs and LSTMs(https://aclanthology.org/S17-2094.pdf) provides a more extensive and comprehensive overview of the various neural models and their performance on the task, in particular different variations of LSTM and CNN and their ensemble combined with various word embeddings. This work includes additional embeddings pre-training and is heavily reliant on distant supervision, which is not very feasible within our project due to the lack of time, therefore, we expect our scores to be lower than those reported by the authors.  
+One of the best results were demonstrated in [DataStories at SemEval-2017 Task 4: Deep LSTM with Attention for
+Message-level and Topic-based Sentiment Analysis paper](https://aclanthology.org/S17-2126.pdf). The architecture described involves a 2-layer Bidirectional LSTM, equipped with an attention mechanism, as well as the pre-trained word embeddings intended to initialize the first layer. Another promising work [BB twtr at SemEval-2017 Task 4: Twitter Sentiment Analysis with CNNs and LSTMs](https://aclanthology.org/S17-2094.pdf) provides a more extensive and comprehensive overview of the various neural models and their performance on the task, in particular different variations of LSTM and CNN and their ensemble combined with various word embeddings. This work includes additional embeddings pre-training and is heavily reliant on distant supervision, which is not very feasible within our project due to the lack of time, therefore, we expect our scores to be lower than those reported by the authors.  
 
 
 ## Datasets
@@ -70,11 +70,11 @@ Once the tweets were fully filtered, we finalized our corpus for the predictions
 
 
 ##### Masks Tweets Distribution:
-![masks](png/masks_month_distribution.png)
+![masks](Pics/masks_month_distribution.png)
 
 
 ##### Vaccines Tweets Distribution:
-![masks](png/vaccines_month_distribution.png)
+![masks](Pics/vaccines_month_distribution.png)
 
 
 Once we got our predictions(see the engineering part of this report), we filtered the tweets once again based on the models agreement and confidence, therefore, our **final** corpus consists of 124,589 tweets: masks corpus - **33,636** tweets and vaccines corpus - **90,953** tweets. Our tweets length ranges from 10 to 554 for masks and from 14 to 556 for vaccines.<br>
@@ -126,7 +126,7 @@ Table 2: Test accuracy and F1 scores on the manually annotated tweets datasets, 
 
 The result table above shows that all three models have achieved over 60% accuracy on the test sets. The BERTweet model outperforms the CNN+BiLSTM model and the fine-tuned BERTweet on both the SemEval 2017 test set and the vaccine test set, with accuracy and F-1 scores of 71.9%, 72% and 78.2%, 79.2%, respectively. However, the fine-tuned BERTweet has higher accuracy score and F-1 socre, 72.2% and 69.1%, among the three models on the mask test set. 
 
-Both BERTweet models outperform CNN+BiLSTM. Since the BERTweet model was trained with over 850 million tweets, the tweets may include hashtags, misspellings, and some specific words used on Twitter, enabling the pre-trained model to identify these features from the tweets better. Therefore, it is clear that applying a pre-trained model helps improve the performance of downstream tasks.Moreover, the performances of our models are generally consistent with the table of task A results in this paper(https://aclanthology.org/2020.emnlp-demos.2.pdf), in which the best accuracy score and F-1 score in task A are 72% and 72.8%. 
+Both BERTweet models outperform CNN+BiLSTM. Since the BERTweet model was trained with over 850 million tweets, the tweets may include hashtags, misspellings, and some specific words used on Twitter, enabling the pre-trained model to identify these features from the tweets better. Therefore, it is clear that applying a pre-trained model helps improve the performance of downstream tasks.Moreover, the performances of our models are generally consistent with the table of task A results in this [paper](https://aclanthology.org/2020.emnlp-demos.2.pdf), in which the best accuracy score and F-1 score in task A are 72% and 72.8%. 
 
 
 ### Model interpretation 
@@ -138,14 +138,14 @@ We applied the representation erasure technique to the CNN model and multi-head 
 - Correct prediction: "368 people died yesterday. RIP those ignored through the boredom of repeated mistakes."  
 Predicted Label: Negative  
 Gold label: Negative
-![tweet1](png/CNN/tweet1.png)
+![tweet1](Pics/CNN/tweet1.png)
 
 The model correctly identifies 'died', 'ignored' and 'boredom' as words contributing to the negative sentiment, and it is equally correct in identifying 'people', 'those', 'of' and 'repeated' as words not really important for the tweet classification.
 
 - Wrong prediction: "#votefordout #masks #covid #Dougford #ontario I wish I lived in PEI or Quebec where the premier listened to science https: //t.co/ uU757dQ1Rw"  
 Predicted Label: Positive  
 Gold label: Negative
-![tweet2](png/CNN/tweet2.png)
+![tweet2](Pics/CNN/tweet2.png)
 
 The reason behind this wrong prediction is that the model is not yet capable of distinguishing sarcastic words and sentences. 
 
@@ -155,14 +155,14 @@ The reason behind this wrong prediction is that the model is not yet capable of 
 - Correct prediction: "368 people died yesterday. RIP those ignored through the boredom of repeated mistakes."  
 Predicted Label: Negative  
 Gold label: Negative
-![tweet3](png/BERTweet/tweet1.png)
+![tweet3](Pics/BERTweet/tweet1.png)
 
 The model correctly predicted the negative sentiment of the given tweet from the words "died", "RIP", and "ignored". However, the model pays a lot of attention to the ".", but the punctuation doesn't make much sense in this tweet.
 
 - Wrong prediction: "#votefordout #masks #covid #Dougford #ontario I wish I lived in PEI or Quebec where the premier listened to science https: //t.co/ uU757dQ1Rw"  
 Predicted Label: Neutral  
 Gold label: Negative
-![tweet4](png/BERTweet/tweet2.png)
+![tweet4](Pics/BERTweet/tweet2.png)
 
 The model is not yet capable of distinguishing sarcastic words and sentences. However, because the model considers more important words with no strong sentiment, they are judged as neutral. In CNN, however, the tweet is predicted to be positive.
 
@@ -172,14 +172,14 @@ The model is not yet capable of distinguishing sarcastic words and sentences. Ho
 - Correct prediction: "368 people died yesterday. RIP those ignored through the boredom of repeated mistakes."  
 Predicted Label: Negative  
 Gold label: Negative
-![tweet5](png/BERTweet_fine-tuned/tweet1.png)
+![tweet5](Pics/BERTweet_fine-tuned/tweet1.png)
 
 The model pays attention to the words "die", "ignored", and "RIP" to produce the correct prediction. However, it treats the punctuation "." as an important element, which makes less sense in the sentence. 
 
 - Wrong prediction: "#votefordout #masks #covid #Dougford #ontario I wish I lived in PEI or Quebec where the premier listened to science https: //t.co/ uU757dQ1Rw"  
 Predicted Label: Neutral  
 Gold label: Negative
-![tweet6](png/BERTweet_fine-tuned/tweet2.png)
+![tweet6](Pics/BERTweet_fine-tuned/tweet2.png)
 
 Again, the model cannot distinguish sarcastic meaning in the sentence.
 
@@ -189,10 +189,10 @@ Again, the model cannot distinguish sarcastic meaning in the sentence.
 
 
 
-![masks_pred_dist](png/masks_pred_results.png)
+![masks_pred_dist](Pics/masks_pred_results.png)
 
 
-![vaccines_pred_dist](png/vaccines_pred_results.png)
+![vaccines_pred_dist](Pics/vaccines_pred_results.png)
 
 
 ```python
