@@ -6,7 +6,7 @@
 
 ## Team Contract and Project Proposal
  - [Team Contract](https://github.com/StarrySkyrs/COVID-sentiment-analysis-in-Twitter/blob/main/Teamwork_contract.md)
- - [Project Proposal](https://github.com/StarrySkyrs/COVID-sentiment-analysis-in-Twitter/blob/main/milestone_2/Project_proposal.md)
+ - [Project Proposal](https://github.com/StarrySkyrs/COVID-sentiment-analysis-in-Twitter/blob/main/Project_proposal.md)
  
 ## Milestone 1
   - [Data Analysis Code](https://github.com/StarrySkyrs/COVID-sentiment-analysis-in-Twitter/blob/main/Milestone_1/data_analysis.ipynb)
