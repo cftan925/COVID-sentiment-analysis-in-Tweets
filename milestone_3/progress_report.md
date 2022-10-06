@@ -110,7 +110,7 @@ We also tried to understand why the model makes this or that prediction, so we r
 TWEET 1 - negative: '368 people died yesterday. RIP those ignored through the boredom of repeated mistakes.'<br>
 
 
-![tweet_1](CNN_tweet_1.png)
+![tweet_1](CNN_tweet_pics/CNN_tweet_1.png)
 
 
 The model correctly identifies 'died', 'ignored' and 'boredom' as words contributing to the negative sentiment, and it is equally correct in identifying 'people', 'those', 'of' and 'repeated' as words not really important for the tweet classification.
@@ -119,10 +119,10 @@ The model correctly identifies 'died', 'ignored' and 'boredom' as words contribu
 TWEET 2 - positive: "Went to the cinema for the first time in over two years last night. The cinema wanted Covid passes and mask wearing. Felt safe snd had a great time #MasksWork  #CovidIsNotOver"
 
 
-![tweet_2](CNN_tweet_2.png)
+![tweet_2](CNN_tweet_pics/CNN_tweet_2.png)
 
 
-![tweet_2](CNN_tweet_2_1.png)
+![tweet_2](CNN_tweet_pics/CNN_tweet_2_1.png)
 
 
 On examining the last part of the tweet which makes it positive, we can see that the model correctly identifies all the words contributing to this sentiment - 'safe' and 'great' and ignores unrelated words - 'for', 'the', 'first', 'time' and so on. It is also interesting to see how it gives the importance initially to the word 'cinema', but the second word 'cinema' is, however, ignored.
@@ -131,8 +131,8 @@ On examining the last part of the tweet which makes it positive, we can see that
 TWEET 3 - neutral: "Do what you want. But, I personally believe we should still be wearing #masks in public settings. Especially very crowded indoor public areas. For the time being at least. Who's with me? #Ottawa #Ontario #MaskUp #WearAMask #MaskMandate #COVID19 #COVID #CovidIsNotOver #DougFord"
 
 
-![tweet_3](CNN_tweet_3.png)
-![tweet_3_1](CNN_tweet_3_1.png)
+![tweet_3](CNN_tweet_pics/CNN_tweet_3.png)
+![tweet_3_1](CNN_tweet_pics/CNN_tweet_3_1.png)
 
 
 INCORRECT PREDICTIONS:<br>
@@ -140,8 +140,8 @@ INCORRECT PREDICTIONS:<br>
 TWEET 1(classified as positive, while it is neutral): "Good morning friends!  I have a question. No judgement, I promise.  Are you still wearing your mask when indoors shopping, or at the mall?  #Covid #Masks"
 
 
-![tweet_4](CNN_tweet_4.png)
-![tweet_4_1](CNN_tweet_4_1.png)
+![tweet_4](CNN_tweet_pics/CNN_tweet_4.png)
+![tweet_4_1](CNN_tweet_pics/CNN_tweet_4_1.png)
 
 
 By mistake, the model gives a lot of importance to the exclamation mark and '.'
@@ -150,13 +150,13 @@ By mistake, the model gives a lot of importance to the exclamation mark and '.'
 TWEET 2(classified as positive, while it is negative): "#votefordout #masks #covid #Dougford #ontario I wish I lived in PEI or Quebec where the premier listened to science https: //t.co/ uU757dQ1Rw"
 
 
-![tweet_5](CNN_tweet_5.png)
+![tweet_5](CNN_tweet_pics/CNN_tweet_5.png)
 
 
 TWEET 3(classified as negative, while it is positive): "Every single conference I have gone to, I come home very sick. That is until now! I just spent many days around hundreds of people (all who were required to mask throughout the conference) and I am not sick!  #MasksWork #RetreatMigraine2022 #ConferencesDoneRight @CoalitionCHAMP"
 
 
-![tweet_6](CNN_tweet_6.png)
+![tweet_6](CNN_tweet_pics/CNN_tweet_6.png)
 
 
 From the errors the model is making, we can see that it is not capable to read between the lines, it does not detect sarcasm or irony in TWEET 2 and it is also not capable to infer that the reason TWEET 3 is positive is because of the last part if it. 
